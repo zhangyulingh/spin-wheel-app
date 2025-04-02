@@ -8,6 +8,7 @@
 <script lang="ts" setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 import pjImage from '/images/pj.png'
+const audio = new Audio('/sounds/spin.mp3') // 直接加载音频
 
 const wheelCanvas = ref<HTMLCanvasElement | null>(null)
 let ctx: CanvasRenderingContext2D | null = null
@@ -126,25 +127,43 @@ const drawWheel = () => {
 
 const spin = () => {
   const arc = (Math.PI * 2) / prizes.length
-  const targetIndex = Math.floor(Math.random() * prizes.length)
-  const targetAngle = arc * targetIndex + Math.PI * 6 // 让它多转几圈
-  const totalRotation = targetAngle - angle.value
 
+  // 随机目标扇形
+  const targetIndex = Math.floor(Math.random() * prizes.length)
+  const targetAngle = arc * targetIndex // 目标扇形角度
+  const totalRounds = Math.floor(Math.random() * 5) + 15 // 3-5圈随机
+
+  let totalRotation = totalRounds * Math.PI * 2 + targetAngle - angle.value // 总角度
   let currentRotation = 0
+  let speed = 1.5 // 初始速度
+  let lastPlayedIndex = -1 // 记录上次播放音效的扇形索引
+
   const spinInterval = setInterval(() => {
-    currentRotation += 0.1
-    angle.value += 0.1
+    const progress = currentRotation / totalRotation // 旋转进度 0 - 1
+    speed = Math.max(0.02, 1.5 * (1 - progress)) // 速度逐渐减小，最低 0.2 防止停得太快
+    currentRotation += speed
+    angle.value += speed
+
     drawWheel()
 
+    // 计算当前指向的扇形索引
+    const currentIndex = getPointedIndex()
+
+    // 播放音效
+    if (currentIndex !== lastPlayedIndex) {
+      audio.currentTime = 0
+      audio.play().catch(err => console.warn('音频播放失败:', err))
+      lastPlayedIndex = currentIndex
+    }
+
+    // 停止判断
     if (currentRotation >= totalRotation) {
       clearInterval(spinInterval)
-
-      // 这里确保最终角度精准对齐中奖扇区
-      angle.value = targetIndex * arc
+      angle.value = targetAngle // **确保最终角度精准**
       drawWheel()
-      setTimeout(() => showResult(targetIndex), 300) // 延迟一点点，避免视觉上误差
+      setTimeout(() => showResult(targetIndex), 300)
     }
-  }, 16)
+  }, 16) // 每 16ms 更新一次
 }
 
 // 显示结果
