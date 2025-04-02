@@ -1,0 +1,43 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "main": "main.js",
+  "build": {
+    "appId": "com.example.spinwheel",
+    "files": [
+      "dist/**/*",
+      "main.js"
+    ],
+    "directories": {
+      "output": "dist_electron"
+    }
+  },
+  "dependencies": {
+    "nuxt": "^3.16.1",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0"
+  },
+  "devDependencies": {
+    "@element-plus/nuxt": "^1.1.1",
+    "@unocss/nuxt": "66.1.0-beta.8",
+    "@unocss/preset-attributify": "66.1.0-beta.8",
+    "@unocss/preset-icons": "66.1.0-beta.8",
+    "@unocss/preset-uno": "66.1.0-beta.8",
+    "@unocss/reset": "66.1.0-beta.8",
+    "concurrently": "^9.1.2",
+    "electron": "^35.1.2",
+    "electron-builder": "^26.0.12",
+    "unocss": "66.1.0-beta.8",
+    "unplugin-auto-import": "^19.1.2",
+    "unplugin-vue-components": "^28.4.1",
+    "wait-on": "^8.0.3"
+  }
+}
