@@ -34,3 +34,19 @@ const prizes = [
 🌍 **适用场景**：🎡 **电商抽奖活动** | 🏆 **公司年会抽奖** | 🎮 **游戏内抽奖** | 🎁 **在线福利赠送**
 
 📌 **完全开源**，欢迎 **⭐ Star & Fork**！🔥 **快来试试，让你的抽奖更酷炫！** 🚀 [GitHub 地址](https://github.com/your-repo-url)
+
+🚀 A highly customizable and smooth spinning lucky wheel for Vue 3, with realistic physics, dynamic highlighting, and sound effects. Perfect for lottery events, e-commerce promotions, and interactive games. 🎡🎉
+
+🔹 Features:
+
+🎯 Smooth and realistic rotation with easing deceleration.
+
+🔥 Dynamic sector highlighting to enhance user experience.
+
+🔊 Built-in sound effects for immersive interactions.
+
+🎨 Fully customizable prize list, colors, and styles.
+
+📱 Responsive design, works seamlessly on mobile and desktop.
+
+🌟 Try it now and make your lottery game more exciting!
