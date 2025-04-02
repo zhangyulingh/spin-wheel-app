@@ -1,8 +1,8 @@
-## 🎡 Nuxt 抽奖系统
+## 🎡 Nuxt 抽奖助手
 
-Nuxt 抽奖系统是一款基于 **Vue 3、TypeScript 和 Nuxt.js 3** 开发的互动式抽奖应用，支持自定义主题、调整抽奖数据，并提供流畅的动画体验。
+Nuxt 抽奖助手是一款基于 **Vue 3、TypeScript 和 Nuxt.js 3** 开发的互动式抽奖应用，支持自定义主题、调整抽奖数据，并提供流畅的动画体验。
 
-![抽奖系统预览](./public/images/screenshot.png)
+![抽奖助手预览](./public/images/screenshot.png)
 
 ### 🌟 核心功能
 
@@ -36,11 +36,11 @@ npm run build
 1. **GitHub README 中的本地路径不能直接访问 `public/`**
    - Nuxt 会将 `public/` 目录中的文件暴露在 `/` 目录下，因此你应该这样写：
      ```markdown
-     ![抽奖系统预览](/images/screenshot.png)
+     ![抽奖助手预览](/images/screenshot.png)
      ```
    - 但 **GitHub README 不解析 `public/` 目录**，你可能需要将图片**上传到 GitHub 仓库**，然后引用 GitHub 上的图片 URL：
      ```markdown
-     ![抽奖系统预览](https://raw.githubusercontent.com/your-username/repository-name/main/public/images/screenshot.png)
+     ![抽奖助手预览](https://raw.githubusercontent.com/your-username/repository-name/main/public/images/screenshot.png)
      ```
    - 或者在 `assets/` 目录下存放图片，并通过 Vue 组件加载。
 
