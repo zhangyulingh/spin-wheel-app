@@ -43,7 +43,7 @@ const prizes = [
 | 微信赞赏码 |
 | :-----------------------------------:
 | ![微信赞赏码]
-| <img src="public/images/4141.jpg" width="200" /> |
+| <img src="public/images/4141.jpg" width="400" /> |
 
 🚀 A highly customizable and smooth spinning lucky wheel for Vue 3, with realistic physics, dynamic highlighting, and sound effects. Perfect for lottery events, e-commerce promotions, and interactive games. 🎡🎉
 
