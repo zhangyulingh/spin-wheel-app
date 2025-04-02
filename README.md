@@ -1,5 +1,7 @@
 ### 🌟 Nuxt Minimal Starter —— 轻量级高效开发框架
 
+![项目预览](images/nuxtImage.png)
+
 Nuxt Minimal Starter 是一个基于 **Nuxt.js 3** 的轻量级起始模板，专为现代 Web 开发打造。它提供了开箱即用的 **服务器端渲染（SSR）**、**静态站点生成（SSG）** 和 **客户端渲染（CSR）** 方案，使开发者能够轻松构建高性能、SEO 友好的 Web 应用。
 
 🚀 **核心特点**：
