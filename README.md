@@ -2,7 +2,7 @@
 
 Nuxt 抽奖助手是一款基于 **Vue 3、TypeScript 和 Nuxt.js 3** 开发的互动式抽奖应用，支持自定义主题、调整抽奖数据，并提供流畅的动画体验。
 
-![抽奖助手预览](/images/nuxtImage.jpg)
+![抽奖助手预览](public/images/nuxtImage.jpg)
 
 ### 🌟 核心功能
 
