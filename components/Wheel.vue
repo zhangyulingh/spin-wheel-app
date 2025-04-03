@@ -37,7 +37,7 @@ const arrowHeightRatio = 0.7
 // 更新画布尺寸
 const updateCanvasSize = () => {
   if (!wheelCanvas.value) return
-  const size = Math.min(window.innerWidth, window.innerHeight) * 0.93
+  const size = Math.min(window.innerWidth, window.innerHeight) * 0.7
   canvasSize.value = size
   wheelCanvas.value.width = size
   wheelCanvas.value.height = size

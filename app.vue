@@ -1,3 +1,23 @@
+<template>
+  <div class="wheel-container" @mousemove="handleMouseMove">
+    <div
+      class="w-3/5 parallax-img"
+      :style="{
+        transform: `translate(${offsetX}px, ${offsetY}px)`,
+      }"
+    >
+      <img
+        src="/images/pjtest.png"
+        alt="Project Test"
+        class="w-240 h-full object-cover md:w-480px xl:w-720px 2xl:w-1200px"
+      />
+    </div>
+
+    <!-- 右侧转盘 -->
+    <div class="w-2/5"><Wheel /></div>
+  </div>
+</template>
+
 <script lang="ts" setup>
 import { ref } from 'vue'
 import Wheel from './components/Wheel.vue'
@@ -16,26 +36,6 @@ const handleMouseMove = (event: MouseEvent) => {
   offsetY.value = y * 40
 }
 </script>
-
-<template>
-  <div class="wheel-container" @mousemove="handleMouseMove">
-    <div
-      class="w-3/5 parallax-img"
-      :style="{
-        transform: `translate(${offsetX}px, ${offsetY}px)`,
-      }"
-    >
-      <img
-        src="/images/pjtest.png"
-        alt="Project Test"
-        class="w-240 h-full object-cover"
-      />
-    </div>
-
-    <!-- 右侧转盘 -->
-    <div class="w-2/5"><Wheel /></div>
-  </div>
-</template>
 
 <style scoped>
 .wheel-container {
