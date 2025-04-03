@@ -1,16 +1,25 @@
 <template>
   <div class="wheel-container" @mousemove="handleMouseMove">
     <div
-      class="w-3/5 parallax-img"
+      class="w-3/5 parallax-img flex flex-col justify-center items-center"
       :style="{
         transform: `translate(${offsetX}px, ${offsetY}px)`,
       }"
     >
-      <img
-        src="/images/pjtest.png"
-        alt="Project Test"
-        class="w-240 h-full object-cover md:w-480px xl:w-720px 2xl:w-1200px"
-      />
+      <div>
+        <img
+          src="/images/logo.png"
+          alt="Project Test"
+          class="w-50 h-full object-cover md:w-150px xl:w-250px 2xl:w-350px"
+        />
+      </div>
+      <div>
+        <img
+          src="/images/pjtest.png"
+          alt="Project Test"
+          class="w-240 h-full object-cover md:w-480px xl:w-720px 2xl:w-1200px"
+        />
+      </div>
     </div>
 
     <!-- 右侧转盘 -->
@@ -26,6 +35,16 @@ const offsetX = ref(0)
 const offsetY = ref(0)
 
 const handleMouseMove = (event: MouseEvent) => {
+  const { clientX, clientY } = event
+  const { innerWidth, innerHeight } = window // Get window dimensions here
+
+  const x = (clientX / innerWidth) * 2 - 1 // -1 到 1
+  const y = (clientY / innerHeight) * 2 - 1
+
+  offsetX.value = x * 40 // 控制前景偏移
+  offsetY.value = y * 40
+}
+const handleMouseMove2 = (event: MouseEvent) => {
   const { clientX, clientY } = event
   const { innerWidth, innerHeight } = window // Get window dimensions here
 
