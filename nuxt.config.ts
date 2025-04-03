@@ -1,12 +1,14 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
-// nuxt.config.ts
 import { defineNuxtConfig } from 'nuxt/config'
 import presetUno from '@unocss/preset-uno'
 import presetAttributify from '@unocss/preset-attributify'
 import presetIcons from '@unocss/preset-icons'
+import '@unocss/nuxt'
 
 export default defineNuxtConfig({
-  modules: ['@unocss/nuxt', '@element-plus/nuxt'],
+  modules: [
+    '@unocss/nuxt', // 确保它在这里
+    '@element-plus/nuxt',
+  ],
   unocss: {
     presets: [
       presetUno(),
