@@ -7,7 +7,6 @@
 
 <script lang="ts" setup>
 import { ref, onMounted, onUnmounted } from 'vue'
-import pjImage from '/images/pj.png'
 const audio = new Audio('/sounds/spin.mp3') // 直接加载音频
 
 const wheelCanvas = ref<HTMLCanvasElement | null>(null)
@@ -174,7 +173,7 @@ const showResult = (index: number) => {
 onMounted(() => {
   if (wheelCanvas.value) {
     ctx = wheelCanvas.value.getContext('2d')
-    arrowImage.src = pjImage
+    arrowImage.src = '/images/pj.png'
     arrowImage.onload = () => {
       updateCanvasSize()
     }
